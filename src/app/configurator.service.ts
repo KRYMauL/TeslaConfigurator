@@ -31,6 +31,7 @@ export class ConfiguratorService {
     }
   );
   readonly step2Ready: Signal<boolean> = computed(() => this.currentCar() != undefined && this.currentColor() != undefined);
+  readonly step3Ready: Signal<boolean>  = computed(() => this.step2Ready() && this.currentConfig() != undefined);
 
   constructor() {
     effect(() => {
@@ -55,5 +56,9 @@ export class ConfiguratorService {
   selectConfig(id: string) {
     const config = this.selectableOptions()?.configs.find(c => c.id === +id);
     this.currentConfig.set(config);
+  }
+
+  totalCost() {
+    return undefined;
   }
 }
