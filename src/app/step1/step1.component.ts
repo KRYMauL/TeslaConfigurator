@@ -1,6 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms';
-import {ConfiguratorService} from "../configurator.service";
+import {ConfiguratorService} from '../configurator.service';
 
 @Component({
   selector: 'app-step1',
